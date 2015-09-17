@@ -1,0 +1,31 @@
+package state;
+
+import model.Bebida;
+import pedido.Pedido;
+import pedido.Status;
+
+public class Fechado extends Status {
+    
+    Pedido p;
+
+    public Fechado(Pedido p) {
+        this.p = p;
+    }
+    
+    @Override
+    public void addItem(Bebida b) {
+        System.out.println("Seu pedido esta fechado, não é possível adicionar mais nada");
+    }
+
+    @Override
+    public void fecharPedido() {
+        System.out.println("Seu pedido já esta fechado.");
+    }
+
+    @Override
+    public void abrirPedido() {
+        System.out.println("vamos reabrir o seu pedido");
+        p.setStt(new Aberto(p));
+    }
+    
+}

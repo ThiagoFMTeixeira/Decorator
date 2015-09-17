@@ -1,17 +1,17 @@
 package model;
 
-public abstract class Bebida  {
-    
+public abstract class Bebida {
+
     String nome;
-    
+
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    public String getNome(){
+
+    public String getNome() {
         return nome;
     }
-    
+
     public abstract double custo();
-    
+
 }

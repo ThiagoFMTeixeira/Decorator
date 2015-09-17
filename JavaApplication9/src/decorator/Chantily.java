@@ -10,7 +10,7 @@ public class Chantily extends Decorator{
 
     @Override
     public String getNome() {
-        return b.getNome() + "com Chantily";
+        return b.getNome() + " com Chantily";
     }
 
     @Override
