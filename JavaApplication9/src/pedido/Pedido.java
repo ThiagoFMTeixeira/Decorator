@@ -2,6 +2,7 @@ package pedido;
 
 import java.util.ArrayList;
 import model.Bebida;
+import pagamentos.Pagamento;
 import state.Aberto;
 
 public class Pedido {
@@ -51,6 +52,10 @@ public class Pedido {
         }
 
         return soma;
+    }
+    
+    public void pagar(Pagamento pgto){
+        stt.pagar(pgto);
     }
 
 }

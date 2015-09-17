@@ -6,13 +6,16 @@ import javax.swing.JOptionPane;
 import model.Bebida;
 import model.Cafe;
 import model.Leite;
+import pagamentos.Credito;
+import pagamentos.Dinheiro;
+import pagamentos.Pagamento;
 import pedido.Pedido;
 
 public class App {
 
     public static void main(String[] args) {
 
-        /*Bebida b;
+        Bebida b;
         
         int x = Integer.parseInt(JOptionPane.showInputDialog("Bebidas: \n1 - Café\n2 - Leite"));
 
@@ -33,7 +36,7 @@ public class App {
         }
 
         JOptionPane.showMessageDialog(null, "Adicional escolhido: " + b.getNome() + "\n Preço final: " + b.custo());
-               */
+               
         
         Pedido p = new Pedido();
         
@@ -46,6 +49,7 @@ public class App {
         p.addItem(new Cafe());
         p.addItem(new Chantily(new Cafe()));
         p.fecharPedido();
+        p.pagar(new Credito());
         
     }
 

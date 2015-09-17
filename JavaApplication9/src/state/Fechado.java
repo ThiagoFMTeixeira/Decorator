@@ -1,12 +1,14 @@
 package state;
 
 import model.Bebida;
+import pagamentos.Pagamento;
 import pedido.Pedido;
 import pedido.Status;
 
 public class Fechado extends Status {
     
     Pedido p;
+    Pagamento pgto;
 
     public Fechado(Pedido p) {
         this.p = p;
@@ -26,6 +28,11 @@ public class Fechado extends Status {
     public void abrirPedido() {
         System.out.println("vamos reabrir o seu pedido");
         p.setStt(new Aberto(p));
+    }
+
+    @Override
+    public void pagar(Pagamento pgto) {
+        pgto.pagar();
     }
     
 }

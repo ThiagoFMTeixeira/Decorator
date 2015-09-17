@@ -1,6 +1,7 @@
 package state;
 
 import model.Bebida;
+import pagamentos.Pagamento;
 import pedido.*;
 
 public class Aberto extends Status {
@@ -30,6 +31,12 @@ public class Aberto extends Status {
     @Override
     public void abrirPedido() {
         System.out.println("O pedido já esta aberto.");
+    }
+
+    @Override
+    public void pagar(Pagamento pgto) {
+        System.out.println("Seu pedido esta aberto!"
+                + "Não é possível fazer o pagamento.");
     }
 
 }
