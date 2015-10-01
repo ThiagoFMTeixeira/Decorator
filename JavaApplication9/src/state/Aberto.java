@@ -1,8 +1,8 @@
 package state;
 
+import model.Pedido;
 import model.Bebida;
 import pagamentos.Pagamento;
-import pedido.*;
 
 public class Aberto extends Status {
 

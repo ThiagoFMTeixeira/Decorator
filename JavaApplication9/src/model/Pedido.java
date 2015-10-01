@@ -1,8 +1,9 @@
-package pedido;
+package model;
 
 import java.util.ArrayList;
 import model.Bebida;
 import pagamentos.Pagamento;
+import state.Status;
 import state.Aberto;
 
 public class Pedido {

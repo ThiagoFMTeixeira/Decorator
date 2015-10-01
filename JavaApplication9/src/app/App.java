@@ -1,55 +1,37 @@
 package app;
 
-import decorator.Canela;
-import decorator.Chantily;
-import javax.swing.JOptionPane;
-import model.Bebida;
-import model.Cafe;
-import model.Leite;
-import pagamentos.Credito;
-import pagamentos.Dinheiro;
-import pagamentos.Pagamento;
-import pedido.Pedido;
+import decorator.Frango;
+import decorator.Picles;
+import javax.swing.SpringLayout;
+import model.Lanche;
+import model.XBacon;
+import model.XSalada;
 
 public class App {
 
     public static void main(String[] args) {
-
-        Bebida b;
         
-        int x = Integer.parseInt(JOptionPane.showInputDialog("Bebidas: \n1 - Café\n2 - Leite"));
-
-        if (x == 1) {
-            b = new Cafe();
-        } else {
-            b = new Leite();
-        }
-
-        JOptionPane.showMessageDialog(null, "Bebida escolhida: " + b.getNome() + "\n Preço: " + b.custo());
-
-        x = Integer.parseInt(JOptionPane.showInputDialog("Adicionais: \n1 - Chantily\n2 - Canela"));
-
-        if (x == 1) {
-            b = new Chantily(b);
-        } else {
-            b = new Canela(b);
-        }
-
-        JOptionPane.showMessageDialog(null, "Adicional escolhido: " + b.getNome() + "\n Preço final: " + b.custo());
-               
         
-        Pedido p = new Pedido();
+        Lanche lan1, lan2;
         
-        p.addItem(new Cafe());
-        p.addItem(new Chantily(new Cafe()));
-        p.fecharPedido();
-        p.addItem(new Cafe());
-        p.addItem(new Chantily(new Cafe()));
-        p.abrirPedido();
-        p.addItem(new Cafe());
-        p.addItem(new Chantily(new Cafe()));
-        p.fecharPedido();
-        p.pagar(new Credito());
+        lan1 = new XSalada();
+        
+        lan2 = new XBacon();
+        
+        System.out.println("\nPreparando o X-Salada...\n");
+        lan1.prepararLanche();
+        System.out.println("Custo: " + lan1.custo());
+        System.out.println("\nAdicionando Frango...\n");
+        lan1 = new Frango(lan1);
+        System.out.println("Lanche Final: " + lan1.getDescricao() + "\nCusto: " + lan1.custo());
+        
+        System.out.println("\nPreparando o X-Bacon...\n");
+        lan2.prepararLanche();
+        System.out.println("Custo: " + lan1.custo());
+        System.out.println("\nAdicionando Picles...\n");
+        lan2 = new Picles(lan2);
+        System.out.println("Lanche Final: " + lan2.getDescricao() + "\nCusto: " + lan2.custo());
+        
         
     }
 

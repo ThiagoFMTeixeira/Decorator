@@ -2,7 +2,7 @@ package decorator;
 
 import model.Bebida;
 
-public class Chantily extends Decorator{
+public class Chantily extends Decorator_Bebida{
 
     public Chantily(Bebida b) {
         this.b = b;    

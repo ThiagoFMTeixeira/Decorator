@@ -2,8 +2,7 @@ package state;
 
 import model.Bebida;
 import pagamentos.Pagamento;
-import pedido.Pedido;
-import pedido.Status;
+import model.Pedido;
 
 public class Fechado extends Status {
     

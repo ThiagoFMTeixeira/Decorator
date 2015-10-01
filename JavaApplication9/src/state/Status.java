@@ -1,4 +1,4 @@
-package pedido;
+package state;
 
 import model.Bebida;
 import pagamentos.Pagamento;
