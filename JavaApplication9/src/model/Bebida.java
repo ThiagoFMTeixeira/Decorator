@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Bebida {
+public abstract class Bebida implements Produto {
 
     String nome;
 
@@ -13,5 +13,10 @@ public abstract class Bebida {
     }
 
     public abstract double custo();
+
+    @Override
+    public String getDescricao() {
+        return this.getNome();
+    }
 
 }

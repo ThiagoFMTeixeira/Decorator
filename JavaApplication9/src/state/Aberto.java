@@ -2,6 +2,8 @@ package state;
 
 import model.Pedido;
 import model.Bebida;
+import model.Lanche;
+import model.Produto;
 import pagamentos.Pagamento;
 
 public class Aberto extends Status {
@@ -13,10 +15,16 @@ public class Aberto extends Status {
     }
 
     @Override
-    public void addItem(Bebida b) {
-        System.out.println("Adicionando ao seu pedido: "
-                + b.getNome());
-        p.getB().add(b);
+    public void addItem(Produto item) {
+        
+        if (item instanceof Bebida) {
+            System.out.println("Adicionando ao seu pedido: " + item.getDescricao() );
+            p.getB().add((Bebida) item);
+        }
+        if (item instanceof Lanche) {
+            System.out.println("Adicionando ao seu pedido: " + item.getDescricao() );
+            p.getLan().add((Lanche) item);
+        }
 
     }
 

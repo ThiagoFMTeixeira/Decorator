@@ -3,6 +3,7 @@ package state;
 import model.Bebida;
 import pagamentos.Pagamento;
 import model.Pedido;
+import model.Produto;
 
 public class Fechado extends Status {
     
@@ -14,7 +15,7 @@ public class Fechado extends Status {
     }
     
     @Override
-    public void addItem(Bebida b) {
+    public void addItem(Produto item) {
         System.out.println("Seu pedido esta fechado, não é possível adicionar mais nada");
     }
 

@@ -1,28 +1,37 @@
 package model;
 
 import java.util.ArrayList;
-import model.Bebida;
 import pagamentos.Pagamento;
 import state.Status;
 import state.Aberto;
 
 public class Pedido {
 
-    private ArrayList<Bebida> b;
+    private ArrayList<Bebida> beb;
+    private ArrayList<Lanche> lan;
     private Status stt;
 
     public Pedido() {
-
-        b = new ArrayList();
+        
+        lan = new ArrayList<>();
+        beb = new ArrayList();
         stt = new Aberto(this);
     }
 
+    public ArrayList<Lanche> getLan() {
+        return lan;
+    }
+
+    public void setLan(ArrayList<Lanche> lan) {
+        this.lan = lan;
+    }
+    
     public ArrayList<Bebida> getB() {
-        return b;
+        return beb;
     }
 
     public void setB(ArrayList<Bebida> b) {
-        this.b = b;
+        this.beb = b;
     }
 
     public Status getStt() {
@@ -41,15 +50,19 @@ public class Pedido {
         stt.abrirPedido();
     }
 
-    public void addItem(Bebida b) {
-        stt.addItem(b);
+    public void addItem(Produto item) {
+        stt.addItem(item);
     }
 
     public double valorFinal() {
         double soma = 0;
 
-        for (Bebida b1 : b) {
+        for (Bebida b1 : beb) {
             soma += b1.custo();
+        }
+        
+        for (Lanche l1 : lan) {
+            soma += l1.custo();
         }
 
         return soma;

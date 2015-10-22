@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Lanche {
+public abstract class Lanche implements Produto{
     
     private String descricao;
     
@@ -11,6 +11,7 @@ public abstract class Lanche {
     public void servir(){}
     public abstract double custo();
 
+    @Override
     public String getDescricao() {
         return descricao;
     }
